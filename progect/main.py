@@ -1,4 +1,10 @@
 import openpyxl
+import os
+for root, dirs, files in os.walk('/home/geydarovr/Загрузки/errors_employees/progect'):
+    for file in files:
+        if file.endswith('.xlsx'):
+            os.rename(file, 'ошибки сотрудников.xlsx')
+
 wb = openpyxl.load_workbook('ошибки сотрудников.xlsx')
 sheets = wb.active
 for i in range(2, sheets.max_row+1):
